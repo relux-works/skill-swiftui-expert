@@ -15,7 +15,7 @@ If you use the `skill-creator` skill, you can:
 
 ## Alternative Workflows
 ### Claude without skill-creator
-- Make changes directly in `SKILL.md` or `skills/swiftui-expert-skill/references/`
+- Make changes directly in `SKILL.md` or `./references/`
 - Keep content concise and focused on SwiftUI
 
 ### Manual edits
@@ -24,7 +24,7 @@ If you use the `skill-creator` skill, you can:
 
 ## Updating Latest API Guidance
 
-To refresh the deprecated-to-modern API reference after a new iOS or Xcode release, use the maintenance skill at `.agents/skills/update-swiftui-apis/SKILL.md`. It walks through scanning Apple's documentation via the Sosumi MCP and updating `skills/swiftui-expert-skill/references/latest-apis.md` with new findings.
+To refresh the deprecated-to-modern API reference after a new iOS or Xcode release, use the maintenance skill at `.agents/skills/update-swiftui-apis/SKILL.md`. It walks through scanning Apple's documentation via the Sosumi MCP and updating `./references/latest-apis.md` with new findings.
 
 ## Types of Contributions
 - Fix incorrect SwiftUI guidance

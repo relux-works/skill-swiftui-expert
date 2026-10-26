@@ -24,7 +24,7 @@
     "lists",
     "sheets"
   ],
-  "skills": "./skills/",
+  "skills": "./",
   "interface": {
     "displayName": "SwiftUI Expert",
     "shortDescription": "Build better SwiftUI views",
@@ -38,8 +38,8 @@
       "Adopt Liquid Glass in this screen."
     ],
     "brandColor": "#006BFF",
-    "composerIcon": "./skills/swiftui-expert-skill/assets/logo-small.png",
-    "logo": "./skills/swiftui-expert-skill/assets/logo.png",
+    "composerIcon": "./assets/logo-small.png",
+    "logo": "./assets/logo.png",
     "termsOfServiceURL": "https://github.com/AvdLee/SwiftUI-Agent-Skill/blob/main/LICENSE"
   }
 }

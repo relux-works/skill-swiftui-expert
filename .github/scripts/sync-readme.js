@@ -3,7 +3,7 @@ const path = require("path");
 
 const repoRoot = path.resolve(__dirname, "../..");
 const readmePath = path.join(repoRoot, "README.md");
-const referencesDir = path.join(repoRoot, "skills", "swiftui-expert-skill", "references");
+const referencesDir = path.join(repoRoot, "references");
 
 const startMarker = "<!-- BEGIN REFERENCE STRUCTURE -->";
 const endMarker = "<!-- END REFERENCE STRUCTURE -->";
@@ -33,7 +33,7 @@ const referenceFiles = fs
 
 const lines = [];
 lines.push("```text");
-lines.push("skills/swiftui-expert-skill/");
+lines.push("./");
 lines.push("  SKILL.md");
 lines.push("  references/");
 

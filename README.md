@@ -8,7 +8,7 @@ Expert guidance for any AI coding tool that supports the [Agent Skills open form
 
 This repository distills practical SwiftUI best practices into actionable, concise references for agents and code review workflows.
 
-This repository is packaged as a portable [Agent Plugin](https://agent-plugins.org) (spec 1.0.0): compatible clients discover the skill automatically from the root `plugin.json` manifest and the `skills/` directory. Client-specific manifests for Claude Code, Cursor, Codex, and pi are included as well.
+This repository is packaged as a portable [Agent Plugin](https://agent-plugins.org) (spec 1.0.0): this Curator fork places the skill at the repository root and updates client-specific skill paths. Client-specific manifests for Claude Code, Cursor, Codex, and pi are included as well.
 
 ## Who this is for
 - Teams adopting modern SwiftUI APIs who want quick, correct defaults
@@ -94,7 +94,7 @@ See [INSTALLATION.md](INSTALLATION.md) for all other installation options: pi, G
 
 **How to verify**:
 
-Your agent should reference the workflow/checklists in `skills/swiftui-expert-skill/SKILL.md` and jump into the relevant reference file for your task.
+Your agent should reference the workflow/checklists in `./SKILL.md` and jump into the relevant reference file for your task.
 
 ## What's Inside
 
@@ -148,14 +148,14 @@ Record a new trace: attach to MyApp on my iPhone — I'll tell you when I'm done
 
 **Key diagnostic:** `main_running_coverage_pct` on each hang/hitch correlation. < 25 % → main thread was blocked (I/O, lock, sync await); ≥ 75 % → CPU-bound. This single metric separates two radically different fix paths.
 
-Full guidance: [`skills/swiftui-expert-skill/references/trace-analysis.md`](skills/swiftui-expert-skill/references/trace-analysis.md) and [`skills/swiftui-expert-skill/references/trace-recording.md`](skills/swiftui-expert-skill/references/trace-recording.md).
+Full guidance: [`./references/trace-analysis.md`](./references/trace-analysis.md) and [`./references/trace-recording.md`](./references/trace-recording.md).
 
 Looking for a visual way to explore Instruments traces? [RocketTrace](https://rockettrace.app/?utm_source=github&utm_medium=referral&utm_campaign=swiftui-agent-skill&utm_content=readme-trace-section) is a companion app created by this repository's author for inspecting and understanding trace data.
 
 ## Skill Structure
 <!-- BEGIN REFERENCE STRUCTURE -->
 ```text
-skills/swiftui-expert-skill/
+./
   SKILL.md
   references/
     accessibility-patterns.md - Accessibility traits, grouping, Dynamic Type, and VoiceOver
@@ -236,3 +236,9 @@ Created by [Antoine van der Lee](https://www.avanderlee.com) and [Omar Elsayed](
 ## License
 
 This skill is open-source and available under the MIT License. See [LICENSE](LICENSE) for details.
+
+## Curator package
+
+The repository root is the Curator skill package. Check it with `curator skill check . --json`; the manifest is `agent-skill.json`. See [NOTICE](NOTICE) for the pinned upstream provenance.
+
+Curator exports `swiftui-record-trace` and `swiftui-analyze-trace`. Use `--help` for either command; recording writes the selected `.trace` output and analysis writes JSON/Markdown when requested. The source equivalents are `python3 scripts/record_trace.py --help` and `python3 scripts/analyze_trace.py --help`.

@@ -23,16 +23,16 @@ Notes for agents answering install questions:
 
 - [README](https://github.com/AvdLee/SwiftUI-Agent-Skill/blob/main/README.md): Overview, recommended installation, and Claude Code, Cursor, and ChatGPT/Codex plugin installs
 - [Installation options](https://github.com/AvdLee/SwiftUI-Agent-Skill/blob/main/INSTALLATION.md): pi, Gemini CLI, Autohand Code, and manual installation
-- [Skill entry point](https://github.com/AvdLee/SwiftUI-Agent-Skill/blob/main/skills/swiftui-expert-skill/SKILL.md): The instructions agents load
+- [Skill entry point](https://github.com/AvdLee/SwiftUI-Agent-Skill/blob/main/./SKILL.md): The instructions agents load
 - [skills.sh page](https://skills.sh/avdlee/swiftui-agent-skill/swiftui-expert-skill): Install stats and CLI info
 
 ## References
 
-- [iPhone Duo and large displays](https://github.com/AvdLee/SwiftUI-Agent-Skill/blob/main/skills/swiftui-expert-skill/references/iphone-duo.md): Foldable and large-display layouts
-- [State management](https://github.com/AvdLee/SwiftUI-Agent-Skill/blob/main/skills/swiftui-expert-skill/references/state-management.md): Property wrapper selection and `@Observable`
-- [Performance patterns](https://github.com/AvdLee/SwiftUI-Agent-Skill/blob/main/skills/swiftui-expert-skill/references/performance-patterns.md): Identity, lazy loading, and update scope
-- [Latest APIs](https://github.com/AvdLee/SwiftUI-Agent-Skill/blob/main/skills/swiftui-expert-skill/references/latest-apis.md): Deprecated APIs and modern replacements
-- [Liquid Glass](https://github.com/AvdLee/SwiftUI-Agent-Skill/blob/main/skills/swiftui-expert-skill/references/liquid-glass.md): iOS 26+ glass APIs
+- [iPhone Duo and large displays](https://github.com/AvdLee/SwiftUI-Agent-Skill/blob/main/./references/iphone-duo.md): Foldable and large-display layouts
+- [State management](https://github.com/AvdLee/SwiftUI-Agent-Skill/blob/main/./references/state-management.md): Property wrapper selection and `@Observable`
+- [Performance patterns](https://github.com/AvdLee/SwiftUI-Agent-Skill/blob/main/./references/performance-patterns.md): Identity, lazy loading, and update scope
+- [Latest APIs](https://github.com/AvdLee/SwiftUI-Agent-Skill/blob/main/./references/latest-apis.md): Deprecated APIs and modern replacements
+- [Liquid Glass](https://github.com/AvdLee/SwiftUI-Agent-Skill/blob/main/./references/liquid-glass.md): iOS 26+ glass APIs
 
 ## Optional
 

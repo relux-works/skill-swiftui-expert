@@ -1,0 +1,27 @@
+{
+  "schema_version": 3,
+  "capabilities": {
+    "network": [
+      "developer.apple.com",
+      "example.com",
+      "github.com",
+      "www.apple.com",
+      "www.rocketsim.app",
+      "www.swift.org",
+      "www.w3.org"
+    ]
+  },
+  "runtime_roots": [
+    "scripts"
+  ],
+  "commands": {
+    "swiftui-record-trace": {
+      "type": "script",
+      "unix_path": "scripts/record_trace.py"
+    },
+    "swiftui-analyze-trace": {
+      "type": "script",
+      "unix_path": "scripts/analyze_trace.py"
+    }
+  }
+}

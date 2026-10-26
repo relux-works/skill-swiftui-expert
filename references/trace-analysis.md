@@ -27,13 +27,13 @@ view names and symbols the trace reveals.
 
 ## The three CLI modes
 
-The scripts live alongside this skill at `scripts/` and need only the
+Curator exports `swiftui-record-trace` and `swiftui-analyze-trace`; resolve them as described in `SKILL.md`. The source scripts live at `scripts/` and need only the
 Python 3 stdlib + `xctrace` (ships with Xcode at `/usr/bin/xctrace`).
 
 ### 1. Full analysis (default)
 
 ```bash
-python3 "${SKILL_DIR}/scripts/analyze_trace.py" \
+swiftui-analyze-trace \
   --trace "/path/to/file.trace" \
   --top 10 --top-hitches 5 \
   [--window START_MS:END_MS] \
@@ -54,7 +54,7 @@ python3 "${SKILL_DIR}/scripts/analyze_trace.py" \
 ### 2. `--list-logs` — find os_log timestamps
 
 ```bash
-python3 "${SKILL_DIR}/scripts/analyze_trace.py" --trace <path> --list-logs \
+swiftui-analyze-trace --trace <path> --list-logs \
   [--log-subsystem com.myapp.net] \
   [--log-category "Network"] \
   [--log-type Fault] \
@@ -71,7 +71,7 @@ AND-combined; `--log-message-contains` is case-insensitive substring match.
 ### 3. `--list-signposts` — find signpost intervals
 
 ```bash
-python3 "${SKILL_DIR}/scripts/analyze_trace.py" --trace <path> --list-signposts \
+swiftui-analyze-trace --trace <path> --list-signposts \
   [--signpost-name-contains "ImageDecode"] \
   [--signpost-subsystem com.myapp.feed] \
   [--signpost-category "Rendering"] \
@@ -88,7 +88,7 @@ match.
 ### 4. `--fanin-for` — who keeps invalidating this view?
 
 ```bash
-python3 "${SKILL_DIR}/scripts/analyze_trace.py" --trace <path> \
+swiftui-analyze-trace --trace <path> \
   --fanin-for "TextStyleModifier" \
   [--window START_MS:END_MS] \
   [--top 10]

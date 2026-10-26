@@ -9,7 +9,7 @@ Review changes as an **Agent Skills expert**, focusing on the **Agent Skills ope
 - **YAML frontmatter requirements**:
   - **`name`**: non-empty, **<= 64 chars**, **lowercase letters/numbers/hyphens only**.
   - **`description`**: non-empty, **<= 1024 chars**, clearly states **what the skill does** and **when to use it**.
-- **Progressive disclosure**: keep `SKILL.md` as the primary entrypoint; move deep dives into `skills/swiftui-expert-skill/references/`.
+- **Progressive disclosure**: keep `SKILL.md` as the primary entrypoint; move deep dives into `./references/`.
 - **Filesystem-based design**: content should be organized so agents can load only what they need (metadata → instructions → references).
 
 ### Skill Content Organization (Progressive Disclosure)
@@ -18,11 +18,11 @@ Review changes as an **Agent Skills expert**, focusing on the **Agent Skills ope
 - YAML frontmatter should be concise and trigger-relevant.
 
 **Level 2: Instructions (loaded when triggered)**
-- `skills/swiftui-expert-skill/SKILL.md` body should contain workflows, checklists, decision trees, and quick references.
+- `./SKILL.md` body should contain workflows, checklists, decision trees, and quick references.
 - Avoid turning `SKILL.md` into an encyclopedia; prefer linking out to references.
 
 **Level 3: Resources (loaded as needed)**
-- Topic-specific guidance lives in `skills/swiftui-expert-skill/references/*.md`.
+- Topic-specific guidance lives in `./references/*.md`.
 - References should be linked from `SKILL.md` so agents discover them naturally.
 
 ## SwiftUI Repository Constraints (Keep This Skill “On Mission”)
@@ -70,7 +70,7 @@ Code examples in this repository are **reference patterns for AI agents**, not c
 - **Invalid `name`** (uppercase, underscores, spaces, too long).
 - **Vague `description`** (“helps with SwiftUI”) without clear trigger conditions.
 - **Overlong `SKILL.md`** that repeats reference content instead of linking to it.
-- **Unlinked references** in `skills/swiftui-expert-skill/references/` that aren’t discoverable from `SKILL.md`.
+- **Unlinked references** in `./references/` that aren’t discoverable from `SKILL.md`.
 - **Architecture prescriptions** or project-structure mandates.
 - **Tooling walkthroughs** (IDE-specific or step-by-step tool usage).
 - **Non-SwiftUI deep dives** (general Swift language/concurrency tutorials unrelated to SwiftUI usage).

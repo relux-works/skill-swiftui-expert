@@ -36,14 +36,14 @@ Install the skill globally:
 ```bash
 git clone https://github.com/AvdLee/SwiftUI-Agent-Skill.git
 mkdir -p ~/.autohand/skills
-cp -R SwiftUI-Agent-Skill/skills/swiftui-expert-skill ~/.autohand/skills/
+cp -R SwiftUI-Agent-Skill/. ~/.autohand/skills/
 ```
 
 Or install it only for the current project:
 ```bash
 git clone https://github.com/AvdLee/SwiftUI-Agent-Skill.git
 mkdir -p .autohand/skills
-cp -R SwiftUI-Agent-Skill/skills/swiftui-expert-skill .autohand/skills/
+cp -R SwiftUI-Agent-Skill/. .autohand/skills/
 ```
 
 Autohand Code discovers skills from `~/.autohand/skills/` and `.autohand/skills/`.
@@ -51,10 +51,10 @@ Autohand Code discovers skills from `~/.autohand/skills/` and `.autohand/skills/
 ## Manual install
 
 1) **Clone** this repository.
-2) **Install or symlink** the `skills/swiftui-expert-skill/` folder following your tool's official skills installation docs (see links below).
+2) **Install or symlink** the repository root folder following your tool's official skills installation docs (see links below).
 3) **Use your AI tool** as usual and ask it to use the "swiftui-expert" skill for SwiftUI tasks.
 
-> Note: the skill folder moved from the repository root to `skills/swiftui-expert-skill/` when adopting the Agent Plugins format. A symlink at the old `swiftui-expert-skill/` path keeps existing local clones and scripts working; it will be removed in the next major version.
+> This Curator fork packages the skill at the repository root; see NOTICE for its pinned upstream source.
 
 ### Where to Save Skills
 
@@ -67,7 +67,7 @@ Follow your tool's official documentation, here are a few popular ones:
 
 **How to verify:**
 
-Your agent should reference the workflow/checklists in `skills/swiftui-expert-skill/SKILL.md` and jump into the relevant reference file for your task.
+Your agent should reference the workflow/checklists in `./SKILL.md` and jump into the relevant reference file for your task.
 
 ## Trigger the skill
 
