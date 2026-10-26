@@ -4,7 +4,7 @@ Use this reference when the user asks to record a new trace — either to
 attach to a running app, launch one fresh, or capture a specific session
 of actions they'll perform interactively.
 
-The bundled `swiftui-record-trace` command (`scripts/record_trace.py` in a source checkout) wraps `xctrace record` with:
+The bundled `swiftui-record-trace` command wraps `xctrace record` with:
 
 - The **SwiftUI** template by default (override with `--template`).
 - **Manual stop** via Ctrl+C, a stop-file, or `--time-limit`.
@@ -101,7 +101,7 @@ plug them in before recording.
 > Simulator it records but the SwiftUI lane comes back empty.** If the
 > chosen UDID falls under the `simulators` kind from `--list-devices`,
 > switch to `Time Profiler`. It still gives you Time Profiler + Hangs +
-> Animation Hitches, which `analyze_trace.py` analyses and correlates
+> Animation Hitches, which `swiftui-analyze-trace` analyses and correlates
 > normally; only the `swiftui` lane will report `available: false`.
 
 Decision flow:
@@ -132,7 +132,7 @@ swiftui-record-trace \
 ## Chaining into analysis
 
 The recording script prints `trace written: <path>` on exit. Feed that
-path straight into `analyze_trace.py`:
+path straight into `swiftui-analyze-trace`:
 
 ```bash
 TRACE=$(swiftui-record-trace \

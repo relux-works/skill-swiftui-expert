@@ -27,7 +27,7 @@ view names and symbols the trace reveals.
 
 ## The three CLI modes
 
-Curator exports `swiftui-record-trace` and `swiftui-analyze-trace`; resolve them as described in `SKILL.md`. The source scripts live at `scripts/` and need only the
+Curator exports `swiftui-record-trace` and `swiftui-analyze-trace`; resolve them as described in `SKILL.md`. The commands need only the
 Python 3 stdlib + `xctrace` (ships with Xcode at `/usr/bin/xctrace`).
 
 ### 1. Full analysis (default)

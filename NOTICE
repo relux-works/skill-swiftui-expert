@@ -3,3 +3,12 @@ Pinned upstream commit: 204dba7c67256a8b707ee3fbc5759a824191974f
 
 The upstream MIT LICENSE and copyright are retained unchanged.
 Relux Works changes package layout and adds Curator metadata; upstream skill guidance is preserved.
+
+Round 2 packaging changes to upstream instructional text:
+- references/latest-apis.md: link the maintenance workflow in installed references.
+- Move .agents/skills/update-swiftui-apis/SKILL.md to references/update-swiftui-apis.md; update the old nested package paths, link its relocated scan manifest, and clarify source-checkout write access and skill-root path resolution.
+- Move the scan manifest to references/swiftui-api-scan-manifest.md without changing its contents.
+- references/trace-recording.md: remove the source-only recorder path and consistently name the exported swiftui-analyze-trace command.
+- references/trace-analysis.md: remove the source-only scripts directory mention.
+- README.md and AGENTS.md: follow the relocated maintenance documents and describe their inclusion as installed references.
+No SwiftUI API advice, recording consent safeguards, executable source bytes, upstream MIT LICENSE, or copyright was changed.

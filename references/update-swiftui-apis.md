@@ -5,25 +5,27 @@ description: Scan Apple's SwiftUI documentation for deprecated APIs and update t
 
 # Update SwiftUI APIs
 
-Systematically scan Apple's developer documentation via the Sosumi MCP, identify deprecated SwiftUI APIs and their modern replacements, and update `skills/swiftui-expert-skill/references/latest-apis.md`.
+Systematically scan Apple's developer documentation via the Sosumi MCP, identify deprecated SwiftUI APIs and their modern replacements, and update `references/latest-apis.md`.
 
 ## Prerequisites
 
 - **Sosumi MCP** must be enabled and available (provides `searchAppleDocumentation`, `fetchAppleDocumentation`, `fetchAppleVideoTranscript`, `fetchExternalDocumentation`)
 - Write access to this repository (or a fork)
 
+Package paths below are relative to the SwiftUI Expert skill root. Make updates in a writable source checkout or fork, then reinstall the package.
+
 ## Workflow
 
 ### 1. Understand current coverage
 
-Read `skills/swiftui-expert-skill/references/latest-apis.md` to understand:
+Read `references/latest-apis.md` to understand:
 - Which deprecated-to-modern transitions are already documented
 - The version segments in use (iOS 15+, 16+, 17+, 18+, 26+)
 - The Quick Lookup Table at the bottom
 
 ### 2. Load the scan manifest
 
-Read `references/scan-manifest.md` (relative to this skill). It contains the categorized list of API areas, documentation paths, search queries, and WWDC video paths to scan.
+Read [the scan manifest](swiftui-api-scan-manifest.md). It contains the categorized list of API areas, documentation paths, search queries, and WWDC video paths to scan.
 
 ### 3. Scan Apple documentation
 
@@ -80,7 +82,7 @@ Keep the attribution line at the top of the file:
 ### 6. Open a pull request
 
 1. Create a branch from `main` named `update/latest-apis-YYYY-MM` (use current year and month).
-2. Commit changes to `skills/swiftui-expert-skill/references/latest-apis.md`.
+2. Commit changes to `references/latest-apis.md`.
 3. Open a PR via `gh pr create` with:
    - **Title**: "Update latest SwiftUI APIs (Month Year)"
    - **Body**: Summary of new/changed entries, attribution to Sosumi MCP

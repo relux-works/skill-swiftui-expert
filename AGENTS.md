@@ -142,7 +142,7 @@ If unsure, err on the side of excluding content. It's better to have a focused, 
 
 This repository includes a maintenance skill for keeping API guidance up to date:
 
-- **`.agents/skills/update-swiftui-apis/SKILL.md`** — Scan Apple's SwiftUI documentation via the Sosumi MCP, identify deprecated APIs and their modern replacements, and update `./references/latest-apis.md`. Use after new iOS/Xcode releases or when you want to refresh the deprecated API reference.
+- **`references/update-swiftui-apis.md`** — Scan Apple's SwiftUI documentation via the Sosumi MCP, identify deprecated APIs and their modern replacements, and update `./references/latest-apis.md`. Use after new iOS/Xcode releases or when you want to refresh the deprecated API reference.
 
 ## Summary
 

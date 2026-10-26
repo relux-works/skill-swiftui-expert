@@ -199,15 +199,14 @@ Looking for a visual way to explore Instruments traces? [RocketTrace](https://ro
 The repository includes a maintenance skill for keeping API guidance current:
 
 ```text
-.agents/skills/update-swiftui-apis/
-  SKILL.md               - Workflow for scanning Apple docs and updating latest-apis.md
-  references/
-    scan-manifest.md     - Categorized API areas, doc paths, and search queries to scan
+references/
+  update-swiftui-apis.md       - Workflow for scanning Apple docs and updating latest-apis.md
+  swiftui-api-scan-manifest.md - Categorized API areas, doc paths, and search queries to scan
 ```
 
 Use this skill after new iOS or Xcode releases to refresh the deprecated API reference. It requires the [Sosumi MCP](https://github.com/NSHipster/sosumi.ai) to be available. See `AGENTS.md` or `CONTRIBUTING.md` for details.
 
-Note: only `swiftui-expert-skill` is intended to be published in the Cursor plugin. The maintenance skill remains a repository workflow utility.
+Note: only `swiftui-expert-skill` is intended to be published in the Cursor plugin. The maintenance workflow and scan manifest are included as reference documents; updates require a writable repository or fork.
 
 ## Contributing
 
