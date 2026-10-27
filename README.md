@@ -185,10 +185,12 @@ Looking for a visual way to explore Instruments traces? [RocketTrace](https://ro
     soft-deprecation.md
     state-management.md - Property wrapper selection and data flow
     styled-text-editing.md - AttributedString editing, selection, formatting, and Markdown
+    swiftui-api-scan-manifest.md
     text-patterns.md
     toolbar-patterns.md - Customization, overflow, visibility, transitions, and minimization
     trace-analysis.md
     trace-recording.md
+    update-swiftui-apis.md
     view-structure.md - View extraction and composition patterns
     webkit-integration.md - WebView, WebPage, navigation, JavaScript, and exports
 ```
