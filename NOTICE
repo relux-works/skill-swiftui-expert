@@ -2,13 +2,123 @@ This package is derived from https://github.com/AvdLee/SwiftUI-Agent-Skill.
 Pinned upstream commit: 204dba7c67256a8b707ee3fbc5759a824191974f
 
 The upstream MIT LICENSE and copyright are retained unchanged.
-Relux Works changes package layout and adds Curator metadata; upstream skill guidance is preserved.
 
-Round 2 packaging changes to upstream instructional text:
-- references/latest-apis.md: link the maintenance workflow in installed references.
-- Move .agents/skills/update-swiftui-apis/SKILL.md to references/update-swiftui-apis.md; update the old nested package paths, link its relocated scan manifest, and clarify source-checkout write access and skill-root path resolution.
-- Move the scan manifest to references/swiftui-api-scan-manifest.md without changing its contents.
-- references/trace-recording.md: remove the source-only recorder path and consistently name the exported swiftui-analyze-trace command.
-- references/trace-analysis.md: remove the source-only scripts directory mention.
-- README.md and AGENTS.md: follow the relocated maintenance documents and describe their inclusion as installed references.
-No SwiftUI API advice, recording consent safeguards, executable source bytes, upstream MIT LICENSE, or copyright was changed.
+Complete instructional-text changes relative to that pinned upstream commit
+(current file paths are used below):
+
+- SKILL.md (upstream skills/swiftui-expert-skill/SKILL.md): move the entry point
+  to the package root; add the Curator command-resolution section (project
+  .agents/bin, manager global/bin, Windows .cmd shims, then validated command
+  lookup, with shell profile activation optional). Replace both recorder
+  invocations (device listing and starting a recording) and all three analyzer
+  invocations (log discovery, signpost discovery and main analysis) from
+  python3 "${SKILL_DIR}/scripts/..." to swiftui-record-trace or
+  swiftui-analyze-trace. Reason: installed agents must resolve and invoke the
+  managed commands while runtime scripts are stored outside prompt context.
+
+- references/trace-recording.md (upstream under skills/swiftui-expert-skill/):
+  describe the bundled recorder by its exported swiftui-record-trace name
+  instead of scripts/record_trace.py. Replace every direct Python invocation
+  in the attach, launch, background/stop-file, time-limit, device-listing,
+  template-listing, approved system-wide and record-then-analyze examples with
+  the exported recorder/analyzer commands. Replace both bare analyze_trace.py
+  prose mentions with swiftui-analyze-trace. Reason: every example and prose
+  command must use the same installed interface without a source-only path.
+  Command arguments, recording consent, privacy guidance and trace handling
+  remain unchanged.
+
+- references/trace-analysis.md (upstream under skills/swiftui-expert-skill/):
+  replace the scripts/ location statement with the two exported Curator command
+  names and a pointer to SKILL.md for resolution. Replace all four Python
+  analyzer invocations (full analysis, --list-logs, --list-signposts and
+  --fanin-for) with swiftui-analyze-trace. Reason: runtime scripts are not
+  installed instructional targets; use the managed interface. Python/xctrace
+  prerequisites, arguments and interpretation guidance remain unchanged.
+
+- references/latest-apis.md (upstream under skills/swiftui-expert-skill/):
+  replace the .agents/skills/update-swiftui-apis/SKILL.md maintenance instruction
+  with a relative link to update-swiftui-apis.md. Reason: the maintenance
+  workflow must remain reachable in installed context, which omits .agents/.
+
+- references/update-swiftui-apis.md (upstream
+  .agents/skills/update-swiftui-apis/SKILL.md): relocate the maintenance workflow
+  into installed references; replace the three nested
+  skills/swiftui-expert-skill/references/latest-apis.md paths (overview, coverage
+  reading and commit step) with references/latest-apis.md. Replace the old
+  references/scan-manifest.md input with a relative Markdown link to
+  swiftui-api-scan-manifest.md. Add explicit skill-root path resolution and
+  require updates in a writable source checkout or fork followed by package
+  reinstallation. Reason: preserve the workflow and its dependency closure
+  under root packaging without implying edits to an installed snapshot.
+
+- references/swiftui-api-scan-manifest.md (upstream
+  .agents/skills/update-swiftui-apis/references/scan-manifest.md): relocate the
+  complete manifest without changing its contents. Reason: ship the maintenance
+  workflow's API areas, queries and documentation/video inputs in context.
+
+- README.md: describe the fork's root skill layout and updated client paths;
+  change the verification entry point, both trace-reference links/labels and
+  the skill-structure tree from the nested package to the root layout. Replace
+  the maintenance directory tree with the two installed reference documents
+  and explain their inclusion plus the writable-repository/fork prerequisite.
+  Add the Curator package section with the root check, agent-skill.json, NOTICE
+  provenance link, both exported commands, --help entry points, trace/analysis
+  outputs and source-equivalent Python help commands. Reason: document the
+  fork's actual distribution layout and managed tooling for human users.
+
+- AGENTS.md: replace the maintenance workflow path with
+  references/update-swiftui-apis.md and its latest-apis update target with
+  ./references/latest-apis.md. Reason: repository agents must use the relocated
+  workflow and root-layout update target.
+
+- CONTRIBUTING.md: replace both nested reference-directory/latest-apis target
+  paths with ./references/ and ./references/latest-apis.md. Reason: contributor
+  editing instructions must address the root package. No other contributor
+  guidance was rewritten.
+
+- INSTALLATION.md: change both Autohand copy-source paths to
+  SwiftUI-Agent-Skill/.; change manual install/symlink guidance to the repository
+  root; replace the old nested-layout/compatibility-symlink migration note with
+  the Curator root-layout and NOTICE provenance note; change the verification
+  entry point to ./SKILL.md. Reason: align the existing installation guidance
+  with this fork's package relocation and removed compatibility symlink.
+
+- .github/copilot-instructions.md: change all four nested skill/reference paths
+  (progressive disclosure, instructions level, resources level and unlinked
+  reference checks) to ./SKILL.md or ./references/. Reason: repository review
+  guidance must inspect the relocated instructional files.
+
+- llms.txt: rewrite the skill-entry URL path and all five topic-reference URL
+  paths from skills/swiftui-expert-skill/ to ./, retaining their existing host,
+  repository and branch prefix. Reason: apply the root-layout path adaptation
+  to the repository's agent-facing documentation index. Other text is unchanged.
+
+Related packaging and metadata changes relative to the same upstream pin:
+
+- Move the main skill's remaining references, scripts and PNG assets from
+  skills/swiftui-expert-skill/ to the root, preserving their bytes. The only
+  instructional content edits are itemized above; all other main reference
+  documents are byte-identical. Mark scripts/record_trace.py and
+  scripts/analyze_trace.py executable so the managed shims can launch them;
+  their code and the instruments_parser package are unchanged.
+- agents/openai.yaml: change its skills entry to . and merge the unchanged
+  interface fields from the removed nested agents/openai.yaml. Deduplicate the
+  nested assets/logo.svg against the byte-identical root asset and remove the
+  obsolete swiftui-expert-skill compatibility symlink. Reason: retain discovery
+  metadata and assets without duplicate or dangling nested package entries.
+- .claude-plugin/plugin.json, .codex-plugin/plugin.json,
+  .cursor-plugin/plugin.json and package.json: point skill discovery at the
+  package root; update the Codex and Cursor icon paths to root assets. Reason:
+  preserve client discovery after relocation; descriptive fields are unchanged.
+- .github/scripts/sync-readme.js and
+  .github/workflows/sync-readme-references.yml: select root references and render
+  the root layout in the generated README tree. tests/test_record_trace.py:
+  load the unchanged recorder from its relocated source path. Reason: keep the
+  existing documentation maintenance and test loader aligned with packaging.
+- agent-skill.json: add Curator schema-3 capabilities, network declarations,
+  the scripts runtime root and the two exported script commands. Reason: declare
+  the existing package's audit surface and managed execution entry points.
+- NOTICE: add this upstream pin and complete modification record for provenance.
+
+No SwiftUI API advice, recording consent or privacy safeguards, runtime script source
+bytes, upstream MIT LICENSE, or copyright was changed.
